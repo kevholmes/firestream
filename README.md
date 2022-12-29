@@ -10,6 +10,13 @@ into the CLAPI for transponder status information.
 Its intent is to always be connected to the CLAPI stream and receiving transponder
 data.
 
+There is a companion cli app to replay the data inserted into firebase by this webservice.
+This app is called [replayfirestream](https://github.com/kevholmes/replayfirestream) and
+can be useful for testing or simulating bugs by users in the new ios/android app that listen
+to firestore endpoints for live updates.
+The data is inserted by replayfirestream at the same rate it was reported live by the transponder, but with
+spoofed timestamps to simulate the live experience.
+
 ## Basic functionality
 
 The Firestream adapter will init a connection to the CLAP websocket for an env_all
