@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  firestream:
+    image: quay.io/kevholmes85/firestream:dev
+    restart: always
+    env_file:
+      - dev.env
+    volumes:
+      - type: bind
+        source: "/var/containers/firestream/secrets"
+        target: /secrets
